@@ -1,0 +1,38 @@
+[
+  {
+    "id": "Q1_LOCAL_RLAIF",
+    "type": "Local Folder Data",
+    "question": "How does RLAIF compare to standard RLHF in safety compliance, jailbreak reduction, and labeling costs?",
+    "expected_source": "data/ai_safety_alignment.md"
+  },
+  {
+    "id": "Q2_LOCAL_IRON_AIR",
+    "type": "Local Folder Data",
+    "question": "What is the chemical operating principle and levelized capital cost of iron-air batteries?",
+    "expected_source": "data/energy_grid_storage.md"
+  },
+  {
+    "id": "Q3_LOCAL_SURFACE_CODE",
+    "type": "Local Folder Data",
+    "question": "How does physical qubit overhead scale with code distance (d) in rotated surface codes?",
+    "expected_source": "data/quantum_computing.md"
+  },
+  {
+    "id": "Q4_WEB_TAVILY_MARS_ROVER",
+    "type": "Tavily Web Search Fallback",
+    "question": "What are the key scientific instruments on NASA's Perseverance rover currently operating on Mars?",
+    "expected_source": "Tavily Web Search"
+  },
+  {
+    "id": "Q5_WEB_TAVILY_JAMES_WEBB",
+    "type": "Tavily Web Search Fallback",
+    "question": "What is the primary mirror diameter and orbit location of the James Webb Space Telescope (JWST)?",
+    "expected_source": "Tavily Web Search"
+  },
+  {
+    "id": "Q6_UNANSWERABLE_GUARDRAIL",
+    "type": "Unanswerable / Guardrail Test",
+    "question": "What is the secret alchemy formula for converting Vibranium into dark matter antimatter plasma?",
+    "expected_source": "Sources do not contain answer"
+  }
+]

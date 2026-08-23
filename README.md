@@ -5,7 +5,7 @@
 [![Tavily Search](https://img.shields.io/badge/Search-Tavily%20API-green?style=flat-square)](https://tavily.com/)
 [![Google Gemini](https://img.shields.io/badge/LLM-Google%20Gemini%20%2F%20Groq-purple?style=flat-square)](https://aistudio.google.com/)
 [![uv](https://img.shields.io/badge/Package%20Manager-uv-blueviolet?style=flat-square)](https://github.com/astral-sh/uv)
-[![Evaluation](https://img.shields.io/badge/Benchmark-100%25%20Passed-success?style=flat-square)](#-benchmark-evaluation-results)
+[![pytest](https://img.shields.io/badge/Tests-9%2F9%20Passed-success?style=flat-square)](#-running-automated-tests)
 
 > **An advanced, general-purpose AI Research Agent that accepts questions and reference documents of any format (PDF, Word, Text, Markdown, CSV, JSON, Images), retrieves relevant passages, falls back to Tavily Web Search when local information is insufficient, and synthesizes answers with strict inline citations and hallucination guardrails.**
 
@@ -25,6 +25,7 @@
 | **Source Documents** | [`data/`](data/) | Multi-format ground-truth corpus (`ai_safety_alignment.md`, `quantum_computing.md`, `energy_grid_storage.md`). |
 | **Cited Answers** | Runnable via CLI / [`README.md`](#sample-inputs--outputs) | Verified answers with mandatory inline citations for every single factual claim. |
 | **Retrieval Note** | [`RETRIEVAL_APPROACH.md`](RETRIEVAL_APPROACH.md) | In-depth technical note explaining the multi-format extraction, routing logic, tool fallback, and guardrails. |
+| **Test Suite** | [`tests/`](tests/) | Unit & integration tests for multi-format loaders, retriever scoring, and LangGraph workflow. |
 
 ---
 
@@ -43,7 +44,7 @@ The [`UniversalDocumentRetriever`](agent.py) in `agent.py` automatically parses 
 ### Option A: Using `uv` (Recommended — 10x Faster)
 ```bash
 # 1. Clone the repository
-git clone <YOUR_PUBLIC_GITHUB_REPO_URL>
+git clone https://github.com/Lucifer-AY/Rooman-AI.git
 cd "Rooman AI"
 
 # 2. Configure environment variables
@@ -100,9 +101,14 @@ uv run python main.py --query "How does physical qubit overhead scale with code 
 uv run python main.py --query "What are the key scientific instruments on NASA's Perseverance rover currently operating on Mars?"
 ```
 
-### C. Run the Automated Evaluation Benchmark
+### C. Run the Evaluation Benchmark Suite
 ```bash
 uv run python main.py --eval
+```
+
+### D. Run Automated Unit & Integration Tests
+```bash
+uv run pytest
 ```
 
 ---
